@@ -1,0 +1,13 @@
+<ion-view title="杨公子的订阅">
+  <ion-content>
+    <div class="card">
+      <ion-item class="item item-avatar item-text-wrap" ng-repeat="detail in list | orderBy:predicate:reverse" href="#/detail/{{detail._id}}">
+        <img ng-src="{{detail.details.imglink}}">
+        <h2>{{detail.title}}</h2>
+        <p>{{detail.details.content}}</p>
+      </ion-item>
+    </div>
+    <ion-infinite-scroll distance="1%" on-infinite="loadMore()">
+    </ion-infinite-scroll>
+  </ion-content>
+</ion-view>
